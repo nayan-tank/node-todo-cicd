@@ -16,7 +16,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: deploy image
-        run: docker run -it -d -p 80:80 nginx
+        run: | 
+          docker run -it -d -p 80:80 nginx
+          curl http://localhost
   status:
     runs-on: ubuntu-latest
     needs: [build, deploy]
